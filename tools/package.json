@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@vercel/analytics": "^2.0.1",
     "antd": "^5.22.0",
     "axios": "^1.13.6",
     "browser-image-compression": "^2.0.2",
