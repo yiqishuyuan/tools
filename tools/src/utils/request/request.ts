@@ -5,7 +5,7 @@ type ErrorResponse = {
 }
 
 function normalizeBaseUrl(url: string) {
-  return "https://tools-theta-sooty.vercel.app"
+  return url.replace(/\/+$/, '')
 }
 
 function resolveBaseUrl() {

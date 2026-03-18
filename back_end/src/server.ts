@@ -1,7 +1,6 @@
 import { existsSync } from 'node:fs'
 import { resolve } from 'node:path'
 import dotenv from 'dotenv'
-import serverless from 'serverless-http'
 import app from './app.js'
 
 const envCandidates = [
@@ -15,23 +14,10 @@ if (envPath) {
   dotenv.config()
 }
 
-/**
- * 进程入口：先注册错误处理，再加载并启动服务，避免静默退出
- */
-process.on('uncaughtException', (err) => {
-  console.error('未捕获异常，进程退出:', err)
-  process.exit(1)
-})
-
-process.on('unhandledRejection', (reason) => {
-  console.error('未处理的 Promise 拒绝:', reason)
-  process.exit(1)
-})
-
 const port = Number(process.env.PORT || 3001)
-const serverlessHandler = serverless(app)
+const isVercel = Boolean(process.env.VERCEL)
 
-export default serverlessHandler
+export default app
 
 async function main() {
   try {
@@ -51,6 +37,16 @@ async function main() {
   }
 }
 
-if (!process.env.VERCEL) {
+if (!isVercel) {
+  process.on('uncaughtException', (err) => {
+    console.error('未捕获异常，进程退出:', err)
+    process.exit(1)
+  })
+
+  process.on('unhandledRejection', (reason) => {
+    console.error('未处理的 Promise 拒绝:', reason)
+    process.exit(1)
+  })
+
   main()
 }
