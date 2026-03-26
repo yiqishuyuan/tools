@@ -8,7 +8,7 @@ const projectRoot = path.resolve(__dirname, "..");
 const catalogPath = path.join(projectRoot, "src", "utils", "toolCatalog.tsx");
 const publicDir = path.join(projectRoot, "public");
 
-const rawSiteUrl = process.env.SITE_URL || "https://example.com";
+const rawSiteUrl = process.env.SITE_URL || "https://yiqishuyuan.online";
 const siteUrl = rawSiteUrl.replace(/\/+$/, "");
 
 function escapeXml(value) {
