@@ -33,7 +33,8 @@ function getToolPaths(catalogSource) {
     uniqueIds.add(match[1]);
   }
 
-  return ["/", ...Array.from(uniqueIds, (id) => `${basePath}/${id}`)];
+  const staticPages = ["/about", "/contact", "/privacy-policy", "/terms"];
+  return ["/", ...staticPages, ...Array.from(uniqueIds, (id) => `${basePath}/${id}`)];
 }
 
 function buildSitemap(urls) {

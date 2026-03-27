@@ -225,6 +225,26 @@ body {
   color: var(--text-soft);
 }
 
+.app-site-footer__links {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.app-site-footer__link {
+  color: var(--text-soft);
+  text-decoration: none;
+}
+
+.app-site-footer__link:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.app-site-footer__link--required {
+  font-weight: 600;
+}
+
 .dashboard-shell {
   display: grid;
   gap: 22px;

@@ -7,7 +7,7 @@ import {
 } from '@ant-design/icons'
 import { Button, Input, Layout, Select, Space, Typography, message } from 'antd'
 import { useEffect, useState } from 'react'
-import { Outlet, useLocation, useNavigate } from 'react-router-dom'
+import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom'
 import {
   fetchFeedbackCaptcha,
   submitFeedback,
@@ -225,6 +225,14 @@ export default function MainLayout() {
             </Button>
           </div>
           <div className="app-site-footer">
+            <Space size={16} wrap className="app-site-footer__links">
+              <Link className="app-site-footer__link" to="/about">About（关于我们）</Link>
+              <Link className="app-site-footer__link" to="/terms">Terms（服务条款）</Link>
+              <Link className="app-site-footer__link app-site-footer__link--required" to="/privacy-policy">
+                Privacy Policy（隐私政策）
+              </Link>
+              <Link className="app-site-footer__link" to="/contact">Contact（联系方式）</Link>
+            </Space>
             <Typography.Text>
               @copy {new Date().getFullYear()} lily-工具实验室 · 保留所有权利
             </Typography.Text>
