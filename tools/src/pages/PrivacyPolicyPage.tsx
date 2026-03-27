@@ -34,6 +34,12 @@ export default function PrivacyPolicyPage() {
           www.aboutads.info 了解如何停用部分第三方个性化广告。
         </Typography.Paragraph>
         <Typography.Paragraph>
+          请注意，停用个性化广告可能会导致你看到的广告更不相关，但不会减少你看到的广告数量。
+        </Typography.Paragraph>
+        <Typography.Paragraph>
+          网站是免费的，展示广告仅用于支持网站运营。同时，我们承诺保护你的隐私，不会将你的个人信息用于广告目的。
+        </Typography.Paragraph>
+        <Typography.Paragraph>
           数据保留期限：我们仅在实现服务目的所必需的期间内保留反馈信息。通常反馈记录保留不超过 24
           个月，超过期限后会按运营策略删除或匿名化处理。
         </Typography.Paragraph>
